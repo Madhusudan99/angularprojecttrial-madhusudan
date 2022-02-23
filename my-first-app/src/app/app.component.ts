@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,11 @@ export class AppComponent {
     this.fullname = "John Doe";
 
   }
+  imageUrl = ".././assets/images/download.jpg";
 
-  imageUrl = ".././assets/images/download.jpg"
+
+  htmlText = "";
+  // @ViewChild("exampleInputEmail1") exampleInputEmail1: ElementRef;
+
+  
 }
