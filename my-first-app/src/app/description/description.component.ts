@@ -11,5 +11,10 @@ export class DescriptionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  cartCounter = 0;
+  updateCartCounter() {
+    this.cartCounter++;
+    
+  }
 
 }
