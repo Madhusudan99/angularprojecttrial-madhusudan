@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +11,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  itemsent = "laptop";
+  secondItem = "mobile";
+
+  @Input() getItemFromAppComponent: string[] = [];
 
 }
