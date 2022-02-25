@@ -17,4 +17,8 @@ export class HeaderComponent implements OnInit {
 
   @Input() getItemFromAppComponent: string[] = [];
 
+  allEventsFired = ["-1"];
+  appendEvent(eventName: string) {
+    this.allEventsFired.push(eventName);
+  }
 }

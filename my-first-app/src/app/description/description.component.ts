@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-description',
@@ -11,10 +11,15 @@ export class DescriptionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  cartCounter = 0;
-  updateCartCounter() {
-    this.cartCounter++;
-    
+  
+  @Output() updateCartValue = new EventEmitter<string>();
+
+  fireEvent20() {
+    this.updateCartValue.emit("20");
+  }
+
+  fireEvent50() {
+    this.updateCartValue.emit("50");
   }
 
 }
