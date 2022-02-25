@@ -1,63 +1,29 @@
-<div class="container">
-    <h1>Using Attribute Directives with conditions: </h1>
-    <p [ngClass]="item>10?'red': 'yellow'">{{ item }}</p>
-    <p [ngClass]="classFeature()">{{ item }}</p>
-
-        <ul *ngFor="let element of newArray">
-            <li [ngClass]="element%2==0? 'red': 'yellow'">
-                {{ element }}
-            </li>
-        </ul>
-
-        <p #paragraph [ngClass]="'green'">{{ paratext }}</p>
-
-    <button class="btn btn-success" (click)="showPara()">Enable</button>
-    <button class="btn btn-danger" (click)="disablePara()">Disable</button>
-        <br>
-    <button [ngStyle]="{background: 'yellow'}">Click Me</button>
-    <button [ngStyle]="appendStyle">Click Me</button>
-
-
-
-</div>
-
-
-<table class="table mt-3">
+<p>app component works</p>
+<h1>Items in cart: {{ counter }}</h1>
+<table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Username</th>
-        <th scope="col">Email</th>
-        <th scope="col">City</th>
-        <th scope="col">Zipcode</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Website</th>
-        <th scope="col">Company Name</th>
-
-        <th scope="col">DELETE ROW</th>
-
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of datas" [ngClass]="data.id%2 == 0? 'table-success': 'table-danger'">
-        
-        <th scope="row">{{ data.id }}</th>
-        <td>{{ data.name }}</td>
-        <td>{{ data.username }}</td>
-        <td>{{ data.email }}</td>
-        <td>{{ data.address.city }}</td>
-        <td>{{ data.address.zipcode }}</td>
-        <td>{{ data.phone }}</td>
-        <td>{{ data.website }}</td>
-        <td>{{ data.company.name }}</td>
-        <td>
-                <button class="btn btn-primary" (click)="deleteElement(data)">DELETE</button>
-
-        </td>
+      <tr *ngFor="let cartItem of cartItems">
+        <th scope="row">{{ cartItem.id }}</th>
+        <td>{{ cartItem.name }}</td>
+        <td>{{ cartItem.price }}</td>
+        <td>{{ cartItem.quantity }}</td>
       </tr>
       
+      <tr>
+        <th scope="row">-</th>
+        <td><strong>Total</strong></td>
+        <td>{{ billAmount }}</td>
+        <td>{{ totalQuantity }}</td>
+      </tr>
     </tbody>
   </table>
 
-<!-- <div>{{ data }}</div> -->
+  <app-description (descriptionItemEvent)="addItemToCart($event)"></app-description>

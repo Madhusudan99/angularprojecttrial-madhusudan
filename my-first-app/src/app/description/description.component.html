@@ -1,7 +1,18 @@
 <div class="container">
-
-    <h3>This is the Description component</h3>
-    <p>description works</p>
-
-    <app-product-details (productDescriptionEventEmiter)="addEvent($event)"></app-product-details>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let product of products">
+                <div class="card mb-4" style="width: 18rem;">
+                    <img src="https://www.bigbasket.com/media/uploads/p/s/40075897_12-bb-royal-sona-masoori-rice-raw-rice-super-premium.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h6 class="card-subtitle mb-2 text-muted">$ {{ product.price }}</h6>
+                      <a href="#" class="btn btn-primary" (click)="addToCartEvent(product)">Add To Cart</a>
+                    </div>
+                  </div>
+            </div>
+            
+          </div>
+    </div>
 </div>
