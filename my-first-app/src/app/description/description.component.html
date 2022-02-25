@@ -1,8 +1,7 @@
-<button class="btn btn-primary" (click)="fireEvent20()">
-    Fire Event:20 on Parent
-</button>
+<div class="container">
 
+    <h3>This is the Description component</h3>
+    <p>description works</p>
 
-<button class="btn btn-primary" (click)="fireEvent50()">
-    Fire Event:50 on Parent
-</button>
+    <app-product-details (productDescriptionEventEmiter)="addEvent($event)"></app-product-details>
+</div>

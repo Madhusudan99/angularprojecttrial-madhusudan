@@ -12,13 +12,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  itemsent = "laptop";
-  secondItem = "mobile";
-
-  @Input() getItemFromAppComponent: string[] = [];
-
-  allEventsFired = ["-1"];
-  appendEvent(eventName: string) {
-    this.allEventsFired.push(eventName);
+  counter= 0;
+  allEvents = ["-1"];
+  incrementCounter(commingEvent:string) {
+    this.allEvents.push(commingEvent);
+    if (commingEvent == "add2Cart") {
+      this.counter++;
+    }
   }
+  
 }

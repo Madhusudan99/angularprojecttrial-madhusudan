@@ -12,14 +12,13 @@ export class DescriptionComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  @Output() updateCartValue = new EventEmitter<string>();
+  eventsFired = ["-1"];
 
-  fireEvent20() {
-    this.updateCartValue.emit("20");
-  }
+  @Output() descriptionSectionEventEmiter = new EventEmitter<string>();
+  addEvent(newEvent:string) {
+    this.eventsFired.push(newEvent);
+    this.descriptionSectionEventEmiter.emit("add2Cart");
 
-  fireEvent50() {
-    this.updateCartValue.emit("50");
   }
 
 }

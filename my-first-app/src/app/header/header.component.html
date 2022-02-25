@@ -1,5 +1,9 @@
-<app-description (updateCartValue)="appendEvent($event)"></app-description>
+<div class="container">
 
-<ul>
-  <li *ngFor="let event of allEventsFired">{{event}}</li>
-</ul>
+    <h3>This is the Header component</h3>
+
+    <h6>Total items in cart</h6>
+    <h1>{{ counter }}</h1>
+
+    <app-description (descriptionSectionEventEmiter)="incrementCounter($event)"></app-description>
+</div>
