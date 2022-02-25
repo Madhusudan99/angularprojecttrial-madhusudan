@@ -1,33 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  
-  item = 10;
-
-  newArray = [10, 20, 17, 27, 43, 50, 10];
-
-  appendStyle = {background: 'green'}
-  classFeature() {
-    return 'red';
-  }
-
-  paratext = "";
-  showPara() {
-    this.paratext =  "Hello world!!";
-  }
-
-  disablePara() {
-    this.paratext = "";
-  }
-
-
-
-  datas = [
+[
     {
       "id": 1,
       "name": "Leanne Graham",
@@ -49,8 +20,7 @@ export class AppComponent {
         "name": "Romaguera-Crona",
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
-      }, 
-      "delete": 1,
+      }
     },
     {
       "id": 2,
@@ -73,8 +43,7 @@ export class AppComponent {
         "name": "Deckow-Crist",
         "catchPhrase": "Proactive didactic contingency",
         "bs": "synergize scalable supply-chains"
-      },
-      "delete":0,
+      }
     },
     {
       "id": 3,
@@ -97,8 +66,7 @@ export class AppComponent {
         "name": "Romaguera-Jacobson",
         "catchPhrase": "Face to face bifurcated interface",
         "bs": "e-enable strategic applications"
-      },
-      "delete":0,
+      }
     },
     {
       "id": 4,
@@ -121,8 +89,7 @@ export class AppComponent {
         "name": "Robel-Corkery",
         "catchPhrase": "Multi-tiered zero tolerance productivity",
         "bs": "transition cutting-edge web services"
-      },
-      "delete":0,
+      }
     },
     {
       "id": 5,
@@ -145,7 +112,7 @@ export class AppComponent {
         "name": "Keebler LLC",
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
-      }, "delete":0,
+      }
     },
     {
       "id": 6,
@@ -168,7 +135,7 @@ export class AppComponent {
         "name": "Considine-Lockman",
         "catchPhrase": "Synchronised bottom-line interface",
         "bs": "e-enable innovative applications"
-      }, "delete":0
+      }
     },
     {
       "id": 7,
@@ -191,7 +158,7 @@ export class AppComponent {
         "name": "Johns Group",
         "catchPhrase": "Configurable multimedia task-force",
         "bs": "generate enterprise e-tailers"
-      }, "delete":0
+      }
     },
     {
       "id": 8,
@@ -214,7 +181,7 @@ export class AppComponent {
         "name": "Abernathy Group",
         "catchPhrase": "Implemented secondary concept",
         "bs": "e-enable extensible e-tailers"
-      }, "delete":0
+      }
     },
     {
       "id": 9,
@@ -237,7 +204,7 @@ export class AppComponent {
         "name": "Yost and Sons",
         "catchPhrase": "Switchable contextually-based project",
         "bs": "aggregate real-time technologies"
-      }, "delete":0
+      }
     },
     {
       "id": 10,
@@ -260,14 +227,6 @@ export class AppComponent {
         "name": "Hoeger LLC",
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
-      }, "delete":0
+      }
     }
-  ];
-
-  deleteElement(data:any) {
-    let index = this.datas.indexOf(data);
-    this.datas.splice(index,1);
-  }
-}
-
-
+  ]
