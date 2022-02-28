@@ -14,8 +14,22 @@ export class AppComponent {
     this.getDate = this.dt.today;
     this.arrayData = this.dt.getArrayData();
     this.studentDetails = this.dt.getStudentDetail();
+  }
 
+  user = {
+    "email": "",
+    "password": "",
+    "city":"",
+    "zip": "",
+    "address1": "",
+    "address2": "",
+    "checkbox": "",
 
+  };
+
+  onSubmitOfForm(user:any) {
+    // console.log(user)
+    
   }
 }
 
