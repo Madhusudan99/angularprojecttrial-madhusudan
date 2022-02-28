@@ -9,6 +9,8 @@ import { DescriptionComponent } from './description/description.component';
 import { XComponent } from './x/x.component';
 import { FComponent } from './f/f.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { DatetimeService } from "./datetime.service";
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatetimeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

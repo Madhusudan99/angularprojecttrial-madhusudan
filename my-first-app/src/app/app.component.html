@@ -1,30 +1,5 @@
-<p>app component works</p>
-<h1>Items in cart: {{ counter }}</h1>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Product Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cartItem of cartItems">
-        <th scope="row">{{ cartItem.id }}</th>
-        <td>{{ cartItem.name }}</td>
-        <td>{{ cartItem.price }}</td>
-        <td>{{ cartItem.quantity }}</td>
-      </tr>
-      
-      <tr>
-        <th scope="row">-</th>
-        <td><strong>Total</strong></td>
-        <td>{{ billAmount }}</td>
-        <td>{{ totalQuantity }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <app-description (descriptionItemEvent)="addItemToCart($event)"></app-description>
-  
+<p>{{getDate}}</p>
+<p>{{arrayData}}</p>
+<p>{{studentDetails.id}}</p>
+<p>{{studentDetails.Name}}</p>
+<p>{{studentDetails.Branch}}</p>
