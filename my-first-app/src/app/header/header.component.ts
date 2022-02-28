@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { UserInfoService } from '../user-info.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,18 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userData:any;
+  constructor(public uI: UserInfoService) { 
+   }
 
+   btnPressed(){
+     this.uI.increaseCounter();
+   }
+   name="";
+   sendNameToService(){
+    this.uI.name = this.name;
+   }
   ngOnInit(): void {
   }
 
-  counter= 0;
-  allEvents = ["-1"];
-  incrementCounter(commingEvent:string) {
-    this.allEvents.push(commingEvent);
-    if (commingEvent == "add2Cart") {
-      this.counter++;
-    }
-  }
+
+  
   
 }

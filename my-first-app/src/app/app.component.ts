@@ -9,10 +9,13 @@ export class AppComponent {
   getDate:any;
   arrayData:any;
   studentDetails:any;
+  userData:any;
   constructor(private dt: DatetimeService) {
     this.getDate = this.dt.today;
     this.arrayData = this.dt.getArrayData();
     this.studentDetails = this.dt.getStudentDetail();
+
+
   }
 }
 
