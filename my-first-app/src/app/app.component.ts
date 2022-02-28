@@ -25,6 +25,8 @@ export class AppComponent {
     "address1": "",
     "address2": "",
     "checkbox": "",
+    "fromDate": "",
+    "toDate": "",
 
   };
   table:any=[]
@@ -39,13 +41,20 @@ export class AppComponent {
     }
     
   }
+  fromDate:any;
+  toDate:any;
   onSubmitOfForm(user:any) {
     // console.log(user)
-    this.uI.user = user;
+    // this.uI.user = user;
 
+    this.fromDate = new Date(user.fromDate);
+    this.toDate = new Date(user.toDate);
+    // console.log(this.fromDate)
 
+    // console.log(this.toDate)
 
-
+    let noDays = (this.toDate.getTime() - this.fromDate.getTime())/(1000*3600*24);
+    console.log("Total Bill  is: "+noDays*100);
     
   }
 }
