@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UserInfoService } from '../user-info.service';
 
 @Component({
   selector: 'app-description',
@@ -7,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class DescriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(public uI: UserInfoService) { }
 
   ngOnInit(): void {
   }

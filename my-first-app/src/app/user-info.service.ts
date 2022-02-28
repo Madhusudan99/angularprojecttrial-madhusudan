@@ -14,6 +14,19 @@ export class UserInfoService {
     this.counter++;
   }
 
+  user = {
+    "email": "",
+    "password": "",
+    "city":"",
+    "zip": "",
+    "address1": "",
+    "address2": "",
+    "checkbox": "",
+
+  };
+
+  table:any = [];
+
   getUserData(){
     return [
       {

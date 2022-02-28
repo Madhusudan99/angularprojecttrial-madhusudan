@@ -1,3 +1,9 @@
+<input type="text" [(ngModel)]="tableof">
+<button (click)="sendTable()">Get table</button>
+<h1 *ngFor="let num of table;let i = index">{{tableof}} * {{i+1}} = {{num}}</h1>
+
+
+
 <form #myForm="ngForm" (ngSubmit)="onSubmitOfForm(myForm.value)">
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -44,3 +50,4 @@
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!myForm.form.valid">Sign in</button>
   </form>
+  <app-description></app-description>
