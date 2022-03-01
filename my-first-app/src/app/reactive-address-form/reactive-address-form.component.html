@@ -1,6 +1,33 @@
 <!-- <p>reactive-address-form works!</p> -->
 
-<div class="container mt-5">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">City</th>
+        <th scope="col">Age</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Number of Days</th>
+        <th scope="col">Load Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of httpdata">
+        <th scope="row">{{ data.id }}</th>
+        <td>{{data.firstName}}</td>
+        <td>{{data.lastName}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.noOfDays}}</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- <div class="container mt-5">
     <form [formGroup]="userRegistrationForm" (ngSubmit)="submitUserRegistrationForm(userRegistrationForm)">
 
         <div class="col-md-12">
@@ -44,4 +71,4 @@
             <button type="submit" class="btn btn-primary col-md-12" [disabled]="!userRegistrationForm.valid">Submit</button>
         </div>
     </form>
-</div>
+</div> -->

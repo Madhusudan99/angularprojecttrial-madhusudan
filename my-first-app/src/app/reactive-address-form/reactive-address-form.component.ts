@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { UserInfoService } from '../user-info.service';
 @Component({
   selector: 'app-reactive-address-form',
   templateUrl: './reactive-address-form.component.html',
@@ -7,7 +8,14 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class ReactiveAddressFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  result:any;
+  constructor(private fb: FormBuilder, public uI: UserInfoService) {
+  // this.uI.sendGetRequest();
+
+   }
+
+
+
 
   userRegistrationForm:any;
 
@@ -23,7 +31,17 @@ export class ReactiveAddressFormComponent implements OnInit {
       fromDate:[''],
       toDate:[''],
     })
+    this.uI.sendGetRequest().subscribe((data:any) => this.displaydata(data));     
+     //console.log(data);
+ 
+
+
   }
+  httpdata:any;
+  displaydata(data:any) {this.httpdata = data;
+
+    console.log(this.httpdata);}
+
 
   fromDateValid:any;
   toDateValid:any;

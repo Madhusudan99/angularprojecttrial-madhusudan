@@ -1,23 +1,42 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserInfoService {
+users:any;
+response:any;
+apiURL = "http://192.168.2.85:3000/users/";
+  constructor(private httpClient: HttpClient) { 
+    
+  }
 
-  constructor() { }
+  sendGetRequest() {
+ return this.httpClient.get(this.apiURL);
+
+  }
+
+
+    
+  
+
+  
 
   counter = 0;
-  name="";
+  name = "";
 
-  increaseCounter(){
+  // users = "";
+
+
+  increaseCounter() {
     this.counter++;
   }
 
   user = {
     "email": "",
     "password": "",
-    "city":"",
+    "city": "",
     "zip": "",
     "address1": "",
     "address2": "",
@@ -25,9 +44,9 @@ export class UserInfoService {
 
   };
 
-  table:any = [];
+  table: any = [];
 
-  getUserData(){
+  getUserData() {
     return [
       {
         "id": 1,
