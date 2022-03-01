@@ -1,0 +1,47 @@
+<!-- <p>reactive-address-form works!</p> -->
+
+<div class="container mt-5">
+    <form [formGroup]="userRegistrationForm" (ngSubmit)="submitUserRegistrationForm(userRegistrationForm)">
+
+        <div class="col-md-12">
+            <label for="">First Name:</label><input class="form-control" formControlName="firstName" type="text"
+                placeholder="Enter Your First Name">
+        </div>
+        <div class="col-md-12">
+
+            <label for="">Last Name:</label><input class="form-control" formControlName="lastName" type="text"
+                placeholder="Enter Your Last Name">
+        </div>
+        <div class="col-md-12">
+
+            <label for="">Email :</label><input class="form-control" formControlName="email" type="text"
+                placeholder="Enter Your Email">
+        </div>
+        <div class="col-md-12">
+
+            <label for="">City :</label><input class="form-control" formControlName="city" type="text"
+                placeholder="Enter Your City">
+        </div>
+        <div class="col-md-12">
+            <label for="">Age :</label><input class="form-control" formControlName="age" type="text"
+                placeholder="Enter Your Age">
+        </div>
+        <div class="col-md-12">
+            <label for="">Phone :</label><input class="form-control" formControlName="phone" type="text"
+                placeholder="Enter Your Phone">
+        </div>
+        <div class="col-md-12">
+            <label for="">From date :</label><input class="form-control" formControlName="fromDate" type="date"
+                placeholder="Enter From  Date: " [(ngModel)]="fromDateValid">
+        </div>
+        <div class="col-md-12">
+            <label for="">From date :</label><input class="form-control" formControlName="toDate" type="date"
+                placeholder="Enter To  Date: " [(ngModel)]="toDateValid">
+        </div>
+        <div class="col-md-12">
+            <br>
+            <div *ngIf="getTotalDays(getDate(fromDateValid), getDate(toDateValid)) < 0"></div>
+            <button type="submit" class="btn btn-primary col-md-12" [disabled]="!userRegistrationForm.valid">Submit</button>
+        </div>
+    </form>
+</div>
